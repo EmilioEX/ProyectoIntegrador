@@ -1,0 +1,106 @@
+
+{% extends 'navbar_footer.html' %}
+
+{% block title %}
+    {% block titulo_pagina %}Datos personales{% endblock %}
+{% endblock %}
+
+{% block content %}
+
+<div>
+
+    <h1>
+        {% block titulo_formulario %}Datos personales{% endblock %}
+    </h1>
+
+    <form method="POST" action="{% block accion_formulario %}{% endblock %}">
+
+        <!-- DATOS PERSONALES -->
+        <section>
+
+            <h2>Datos Personales</h2>
+
+            {% block datos_personales %}
+
+            <div>
+                <label>Nombre(s)</label>
+                <input type="text" name="nombre" placeholder="Nombre(s)...">
+            </div>
+
+            <div>
+                <label>Apellido Paterno</label>
+                <input type="text" name="apellido_paterno" placeholder="Apellido Paterno...">
+            </div>
+
+            <div>
+                <label>Apellido Materno</label>
+                <input type="text" name="apellido_materno" placeholder="Apellido Materno...">
+            </div>
+
+            {% endblock %}
+
+        </section>
+
+
+        <!-- CONTACTO -->
+        <section>
+
+            <h2>Contacto</h2>
+
+            {% block contacto %}
+
+            <div>
+                <label>Correo Electrónico</label>
+                <input type="email" name="correo" placeholder="ejemplo@gmail.com">
+            </div>
+
+            <div>
+                <label>Teléfono</label>
+                <input type="tel" name="telefono" placeholder="555 555 5555">
+            </div>
+
+            {% endblock %}
+
+        </section>
+
+
+        <!-- SEGURIDAD -->
+        <section>
+
+            <h2>Seguridad</h2>
+
+            {% block seguridad %}
+
+            <div>
+                <label>Contraseña</label>
+                <input type="password" name="contrasena">
+                <small>Mínimo de 8 caracteres</small>
+            </div>
+
+            <div>
+                <label>Verificar Contraseña</label>
+                <input type="password" name="verificar_contrasena">
+            </div>
+
+            {% endblock %}
+
+        </section>
+
+
+        <!-- INFORMACIÓN ADICIONAL -->
+        {% block informacion_adicional %}
+        {% endblock %}
+
+
+        <!-- BOTÓN -->
+        {% block boton_formulario %}
+
+        <button type="submit">Registrarse</button>
+
+        {% endblock %}
+
+    </form>
+
+</div>
+
+{% endblock %}
